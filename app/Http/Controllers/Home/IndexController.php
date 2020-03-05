@@ -18,7 +18,10 @@ class IndexController extends Controller
 
     public function run()
     {
-        $time = mt_rand(1,10);
-        $this->dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSecond($time)));
+        for ($i = 0; $i < 10; $i++) {
+            $time = mt_rand(1, 10);
+            $this->dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSecond($time)));
+        }
+
     }
 }
