@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::any('/test', 'Home\IndexController@index');
+Route::any('/run', 'Home\IndexController@run');
