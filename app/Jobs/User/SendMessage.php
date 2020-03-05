@@ -35,5 +35,6 @@ class SendMessage implements ShouldQueue
         //
 
         Log::error(sprintf("[%s][%d][%s] ", __CLASS__, $this->var, "开始消耗"));
+        Log::debug(sprintf("[%s][%d][%s] ", __CLASS__, $this->var, "开始消耗"));
     }
 }
