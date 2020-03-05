@@ -37,9 +37,9 @@ class SendMessage implements ShouldQueue
     public function handle()
     {
         //
-        if ( !$this->redis->get(__CLASS__) ) {
+        if ( !$this->redis->get('biu_demo_list') ) {
             Message::sendMarkdownMsg("开始消耗", "开始消耗");
-            $this->redis->set(__CLASS__, 1, 100);
+            $this->redis->set('biu_demo_list', 1, 100);
         }
         Log::error(sprintf("[%s][%d][%s] ", __CLASS__, $this->var, "开始消耗"));
 
