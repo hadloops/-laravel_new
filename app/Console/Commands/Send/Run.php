@@ -39,7 +39,7 @@ class Run extends Command
     public function handle()
     {
         //
-
+        \App\Loop\Message::sendMarkdownMsg('loop', '开始执行');
         (new IndexController())->run();
     }
 }

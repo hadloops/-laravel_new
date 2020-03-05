@@ -8,6 +8,7 @@
 
 namespace App\Loop;
 
+use App\Loop\Curl;
 
 class Message
 {
@@ -16,7 +17,7 @@ class Message
         $payload = [
             'msgtype'  => 'markdown',
             'markdown' => [
-                "title" => $title,
+                "title" => '通知' . $title,
                 "text"  => $content,
             ],
             'at'       => [
