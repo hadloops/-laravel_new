@@ -39,6 +39,7 @@ class SendMessage implements ShouldQueue
         //
         Log::error(sprintf("[%s][%d][%s] ", __CLASS__, $this->var, "开始消耗"));
 
+
         if ( !Redis::get('biu_demo_list') ) {
             Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
             Redis::set('biu_demo_list', 1, 100);
