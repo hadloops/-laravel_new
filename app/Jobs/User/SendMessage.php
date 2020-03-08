@@ -22,10 +22,10 @@ class SendMessage implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($var)
+    public function __construct($value)
     {
         //
-        $this->var   = $var;
+        $this->var   = $value;
         $this->redis = new Redis();
     }
 
