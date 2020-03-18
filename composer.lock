@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6558f74828bca9ebecac73d90cea4b1a",
+    "content-hash": "5e5d22f7c7f92991cd3ab425550a0b68",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -642,6 +642,55 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "jackdou/laravel-swoole",
+            "version": "1.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jhabc1314/laravel-swoole.git",
+                "reference": "0a12df116d6ec9a225e37a6b232d69fb0824def1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jhabc1314/laravel-swoole/zipball/0a12df116d6ec9a225e37a6b232d69fb0824def1",
+                "reference": "0a12df116d6ec9a225e37a6b232d69fb0824def1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": ">=5.5",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "eaglewu/swoole-ide-helper": "dev-master"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JackDou\\Swoole\\SwooleServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JackDou\\Swoole\\": "src/",
+                    "JackDou\\Swoole\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jackdou",
+                    "email": "1139209675@qq.com"
+                }
+            ],
+            "description": "laravel 框架的 swoole 组件，基础的TCP，WS 服务",
+            "time": "2019-08-21T02:41:10+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
