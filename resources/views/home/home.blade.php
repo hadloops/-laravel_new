@@ -65,7 +65,25 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            王星
+            <ul>
+                @foreach($items as $item => $value)
+                    <li>{{ $item }} == {{ $loop->iteration }}
+                        <ul>
+                            @foreach($value as $item_second => $value_second)
+                                <li>{{ $item_second }} == {{ $loop->parent->iteration }}.{{ $loop->iteration }}
+                                    <ul>
+                                        @foreach($value_second as $value_third)
+                                            <li>{{ $value_third }} == {{ $loop->parent->parent->iteration }}.
+                                                {{ $loop->parent->iteration }}.{{ $loop->iteration }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </body>
 </html>

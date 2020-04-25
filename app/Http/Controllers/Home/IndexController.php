@@ -31,6 +31,31 @@ class IndexController extends Controller
 
     public function home()
     {
-        return view('home/home');
+        $items = [
+            '1' => [
+                '1.1' => [
+                    '1.1.1',
+                    '1.1.2'
+                ],
+                '1.2' => [
+                    '1.2.1',
+                    '1.2.2'
+                ]
+            ],
+            '2' => [
+                '2.1' => [
+                    '2.1.1',
+                    '2.1.2'
+                ],
+                '2.2' => [
+                    '2.2.1',
+                    '2.2.2'
+                ]
+            ]
+        ];
+
+
+        return view('home/home',
+            ['items' => $items]);
     }
 }
