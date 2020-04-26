@@ -61,29 +61,49 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .header {
+                height: auto;
+            }
+
+            .top {
+                height: 80px;
+                width: 100%;
+                background: antiquewhite;
+            }
+            .left_1{
+                background: aquamarine;
+                height: 750px;
+                width: 20%;
+            }
+            .right_1{
+                height: 80px;
+                width: 100px;
+                background: burlywood;
+                float: right;
+                position: initial;
+
+
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            <ul>
-                @foreach($items as $item => $value)
-                    <li>{{ $item }} == {{ $loop->iteration }}
-                        <ul>
-                            @foreach($value as $item_second => $value_second)
-                                <li>{{ $item_second }} == {{ $loop->parent->iteration }}.{{ $loop->iteration }}
-                                    <ul>
-                                        @foreach($value_second as $value_third)
-                                            <li>{{ $value_third }} == {{ $loop->parent->parent->iteration }}.
-                                                {{ $loop->parent->iteration }}.{{ $loop->iteration }}
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                @endforeach
-            </ul>
+        <div class="header">
+            <div class="top">
+
+            </div>
+            <div class="left_1">
+                <form action="/test" method="post">
+                    <input type="text" name="" id="">
+                    <input type="password" name="" id="">
+                    <input type="submit" name="提交">
+                </form>
+            </div>
+
+            <div class="right_1">
+
+
+
+            </div>
         </div>
     </body>
 </html>
