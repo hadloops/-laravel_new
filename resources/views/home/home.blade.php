@@ -48,6 +48,7 @@
                 font-size: 84px;
             }
 
+
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -72,7 +73,13 @@
             }
             .left_1{
                 background: aquamarine;
-                height: 750px;
+                height: 150px;
+                width: 20%;
+            }
+
+            .left_2{
+                background: darkgoldenrod;
+                height: 150px;
                 width: 20%;
             }
             .right_1{
@@ -80,10 +87,11 @@
                 width: 100px;
                 background: burlywood;
                 float: right;
-                position: initial;
-
-
+                #margin-top: -100px;
+                position: absolute;
             }
+
+
         </style>
     </head>
     <body>
@@ -102,6 +110,10 @@
             <div class="right_1">
 
 
+
+            </div>
+
+            <div class="left_2">
 
             </div>
         </div>
