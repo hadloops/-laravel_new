@@ -3,9 +3,7 @@
 namespace App\Services;
 
 
-use App\Http\Controllers\Controller;
-
-class Service extends Controller
+class Service
 {
     public function __construct()
     {
