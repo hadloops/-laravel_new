@@ -7,6 +7,10 @@ use App\Services\UserService;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     public function index(UserService $userService)
     {
 

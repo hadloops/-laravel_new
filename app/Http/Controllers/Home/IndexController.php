@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     //
     public function index()
     {
