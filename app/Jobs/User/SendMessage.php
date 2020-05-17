@@ -18,9 +18,9 @@ class SendMessage implements ShouldQueue
     private $redis;
 
     /**
-     * Create a new job instance.
+     * SendMessage constructor.
      *
-     * @return void
+     * @param $value
      */
     public function __construct($value)
     {
