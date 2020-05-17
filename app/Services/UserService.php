@@ -15,4 +15,9 @@ class UserService extends Service
         $this->userModel = new UserModel();
     }
 
+    public function store()
+    {
+        return 111;
+    }
+
 }
