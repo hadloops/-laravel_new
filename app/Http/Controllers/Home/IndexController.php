@@ -135,7 +135,6 @@ class IndexController extends Controller
 
         $obj = new AesService($config);
         $str = '6ufe6mt+nFW1Cg4l1piJBqvfPMpouWwHTl4vJTRr5ae+gWoJC61HAfhuPWjZfr6+pRk2HieCdxzVTOcXi5Z8AWMrW7Fdr8jy6S1iJenWO0iraMfYfDXZ3a4mB72Gnwo6wH9RVGBrzn0N2iMv2nH0WwUeGz7NKA4adELGam3DSKw9GnwVOOMa4wP4iUlIlQeGxNW1+rWJ6XaotNi0y+kP2w==';
-        dd($obj);
         $data = $obj->aesDe($str);
 
         dd($data);
