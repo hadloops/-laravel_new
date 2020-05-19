@@ -7,6 +7,7 @@ use App\Jobs\User\SendMessage;
 use App\Loop\Log as LoopLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use function Couchbase\defaultDecoder;
 
 class IndexController extends Controller
 {
@@ -99,5 +100,10 @@ class IndexController extends Controller
         $str = '{"response":"tRh+RJd7ZCDaqb9HvA5J1X4Ma1xG/nRMMYHHsKyA3kmHz8MCEDclxW3F4UHQ1ns5naOonzzO6ZnH4ubFlTkP9eCI5ODgKDx7Gpvf2hd7nu4IatTShWHwBPoD/IMB/sV4HMkO4sX/fhoglCbBeQ/Cozm2j7aOndM0dFErGZO/EUM=","sign":"HsEj9qdm4gfOduCYw+Pb8Zkx2nWGJTtSer8QTcKSG+Lp33gTX33K8GLNN1QRuwnA8Ug7H/qLrieaNp0FTUk6fulkwuYlk2OHFxj2OW62L9T8DF0SNE955ldlTz1m3NUcoYy25tNwPr97T5OyQ3PnNBZs9ADkFBdkjZFGP4/ppAuDSZwRF6WSh8Tn6JkJbIFw2MXAx7QMOqMR46PTVmuNMtr4MERAnhjXJchiWWJzEvCqXJE68Q98JVXN62IEsXi0xQdRk4h9gjluIVBpwAdQ9JFqCUXPfMlhUoB10lFqyhX2JUHKH2dNRKqS8VENcTkxMpSllS3TxL9y4rU2TZGCPQ=="}';
 
         var_dump(json_decode($str,true));
+    }
+
+    public function test()
+    {
+        phpinfo();
     }
 }
