@@ -102,9 +102,9 @@ class IndexController extends Controller
         var_dump(json_decode($str, true));
     }
 
-    public function test2()
+    public function test()
     {
-        $str = '6ufe6mt+nFW1Cg4l1piJBqvfPMpouWwHTl4vJTRr5ae+gWoJC61HAfhuPWjZfr6+pRk2HieCdxzVTOcXi5Z8AWMrW7Fdr8jy6S1iJenWO0iraMfYfDXZ3a4mB72Gnwo6wH9RVGBrzn0N2iMv2nH0WwUeGz7NKA4adELGam3DSKw9GnwVOOMa4wP4iUlIlQeGxNW1+rWJ6XaotNi0y+kP2w==';
+        $str = 'vnjjA2zifsuLo9lDVb9kJwgvwGvihcxvLx6K1VnB7uwf0walfV79RMffS2a8+j6MNgmXRBb7aPcpEWKDCCxQ9A==","sign":"nBXf6bCWxEjkgHI96dEy+AIBwSiDWr0P/QHc/f1JOoCcFGyCD+gH2bSGZQF6aXk31i0utvN+Ve9wYROsWaqYGXUmnS5DCpDetq8uAhEpXYvhjnGgrhBi+WLJWjrodCl5/r7wlnxg/uyDVlkmvd4upd1ocosODh7fdTuOko6+q07LOjJaJWvlDKV8huLCA4EVZnowEvlBnqG7LqdBlStrYdgOCnULZ28qN08E5G5CNkjxEoOfvxfCIJJW3GWJVgGr7mnD0tICQ5GE8R+LocqVhuYbvmyEqtU7SYbv2e7dIB33ltgwnIECtnsXdAhyGhHDCyqKaGiEYGSGmlruF02XgA==';
 
         $key    = 'beT3gYsuC9ElbZt5wJesUw==';
         $aesKey = base64_decode($key);
@@ -121,7 +121,7 @@ class IndexController extends Controller
 
     }
 
-    public function test()
+    public function test2()
     {
 
         $config = [
