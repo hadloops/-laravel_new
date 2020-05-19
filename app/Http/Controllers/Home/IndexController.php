@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Jobs\User\SendMessage;
 use App\Loop\Log as LoopLog;
+use App\Services\AesService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use function Couchbase\defaultDecoder;
@@ -102,7 +103,7 @@ class IndexController extends Controller
         var_dump(json_decode($str,true));
     }
 
-    public function test()
+    public function test2()
     {
        $str = '6ufe6mt+nFW1Cg4l1piJBqvfPMpouWwHTl4vJTRr5ae+gWoJC61HAfhuPWjZfr6+pRk2HieCdxzVTOcXi5Z8AWMrW7Fdr8jy6S1iJenWO0iraMfYfDXZ3a4mB72Gnwo6wH9RVGBrzn0N2iMv2nH0WwUeGz7NKA4adELGam3DSKw9GnwVOOMa4wP4iUlIlQeGxNW1+rWJ6XaotNi0y+kP2w==';
 
@@ -119,5 +120,24 @@ class IndexController extends Controller
         dd($result);
 
 
+    }
+
+    public function test()
+    {
+
+        $config = [
+            'key'	=>	'reter4446fdfgdfgdfg', //加密key
+            'iv'	=>  md5(time(). uniqid(),true), //保证偏移量为16位
+            'method'	=> 'AES-128-CBC' //加密方式  # AES-256-CBC等
+
+        ];
+
+
+        $obj = new AesService($config);
+        $str = '6ufe6mt+nFW1Cg4l1piJBqvfPMpouWwHTl4vJTRr5ae+gWoJC61HAfhuPWjZfr6+pRk2HieCdxzVTOcXi5Z8AWMrW7Fdr8jy6S1iJenWO0iraMfYfDXZ3a4mB72Gnwo6wH9RVGBrzn0N2iMv2nH0WwUeGz7NKA4adELGam3DSKw9GnwVOOMa4wP4iUlIlQeGxNW1+rWJ6XaotNi0y+kP2w==';
+        dd($obj);
+        $data = $obj->aesDe($str);
+
+        dd($data);
     }
 }
