@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::any('/test', 'Home\IndexController@index');
 Route::any('/run', 'Home\IndexController@run');
 Route::any('/home', 'Home\IndexController@home');
+Route::any('/sync', 'Home\IndexController@sync');
+Route::any('/json', 'Home\IndexController@json');
