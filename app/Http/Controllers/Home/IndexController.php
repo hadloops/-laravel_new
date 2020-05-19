@@ -104,6 +104,20 @@ class IndexController extends Controller
 
     public function test()
     {
-        phpinfo();
+       $str = '6ufe6mt+nFW1Cg4l1piJBqvfPMpouWwHTl4vJTRr5ae+gWoJC61HAfhuPWjZfr6+pRk2HieCdxzVTOcXi5Z8AWMrW7Fdr8jy6S1iJenWO0iraMfYfDXZ3a4mB72Gnwo6wH9RVGBrzn0N2iMv2nH0WwUeGz7NKA4adELGam3DSKw9GnwVOOMa4wP4iUlIlQeGxNW1+rWJ6XaotNi0y+kP2w==';
+
+        $key = 'beT3gYsuC9ElbZt5wJesUw==';
+        $aesKey=base64_decode($key);
+        $iv = 0;
+
+        $aesIV=base64_decode($iv);
+
+        $aesCipher=base64_decode($str);
+
+        $result=openssl_decrypt( $aesCipher, "AES-128-CBC", $aesKey, 1, $aesIV);
+
+        dd($result);
+
+
     }
 }
