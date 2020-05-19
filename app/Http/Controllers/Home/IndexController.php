@@ -95,27 +95,26 @@ class IndexController extends Controller
     }
 
 
-
     public function json()
     {
         $str = '{"response":"tRh+RJd7ZCDaqb9HvA5J1X4Ma1xG/nRMMYHHsKyA3kmHz8MCEDclxW3F4UHQ1ns5naOonzzO6ZnH4ubFlTkP9eCI5ODgKDx7Gpvf2hd7nu4IatTShWHwBPoD/IMB/sV4HMkO4sX/fhoglCbBeQ/Cozm2j7aOndM0dFErGZO/EUM=","sign":"HsEj9qdm4gfOduCYw+Pb8Zkx2nWGJTtSer8QTcKSG+Lp33gTX33K8GLNN1QRuwnA8Ug7H/qLrieaNp0FTUk6fulkwuYlk2OHFxj2OW62L9T8DF0SNE955ldlTz1m3NUcoYy25tNwPr97T5OyQ3PnNBZs9ADkFBdkjZFGP4/ppAuDSZwRF6WSh8Tn6JkJbIFw2MXAx7QMOqMR46PTVmuNMtr4MERAnhjXJchiWWJzEvCqXJE68Q98JVXN62IEsXi0xQdRk4h9gjluIVBpwAdQ9JFqCUXPfMlhUoB10lFqyhX2JUHKH2dNRKqS8VENcTkxMpSllS3TxL9y4rU2TZGCPQ=="}';
 
-        var_dump(json_decode($str,true));
+        var_dump(json_decode($str, true));
     }
 
     public function test2()
     {
-       $str = '6ufe6mt+nFW1Cg4l1piJBqvfPMpouWwHTl4vJTRr5ae+gWoJC61HAfhuPWjZfr6+pRk2HieCdxzVTOcXi5Z8AWMrW7Fdr8jy6S1iJenWO0iraMfYfDXZ3a4mB72Gnwo6wH9RVGBrzn0N2iMv2nH0WwUeGz7NKA4adELGam3DSKw9GnwVOOMa4wP4iUlIlQeGxNW1+rWJ6XaotNi0y+kP2w==';
+        $str = '6ufe6mt+nFW1Cg4l1piJBqvfPMpouWwHTl4vJTRr5ae+gWoJC61HAfhuPWjZfr6+pRk2HieCdxzVTOcXi5Z8AWMrW7Fdr8jy6S1iJenWO0iraMfYfDXZ3a4mB72Gnwo6wH9RVGBrzn0N2iMv2nH0WwUeGz7NKA4adELGam3DSKw9GnwVOOMa4wP4iUlIlQeGxNW1+rWJ6XaotNi0y+kP2w==';
 
-        $key = 'beT3gYsuC9ElbZt5wJesUw==';
-        $aesKey=base64_decode($key);
-        $iv = 0;
+        $key    = 'beT3gYsuC9ElbZt5wJesUw==';
+        $aesKey = base64_decode($key);
+        $iv     = 0;
 
-        $aesIV=base64_decode($iv);
+        $aesIV = base64_decode($iv);
 
-        $aesCipher=base64_decode($str);
+        $aesCipher = base64_decode($str);
 
-        $result=openssl_decrypt( $aesCipher, "AES-128-CBC", $aesKey, 1, $aesIV);
+        $result = openssl_decrypt($aesCipher, "AES-128-CBC", $aesKey, 1, $aesIV);
 
         dd($result);
 
@@ -126,17 +125,26 @@ class IndexController extends Controller
     {
 
         $config = [
-            'key'	=>	'reter4446fdfgdfgdfg', //加密key
-            'iv'	=>  md5(time(). uniqid(),true), //保证偏移量为16位
-            'method'	=> 'AES-128-CBC' //加密方式  # AES-256-CBC等
+            'key'    => '', //加密key
+            'iv'     => md5(time() . uniqid(), true), //保证偏移量为16位
+            'method' => 'AES-128-CBC' //加密方式  # AES-256-CBC等
 
         ];
 
 
         $obj = new AesService($config);
         $str = '6ufe6mt+nFW1Cg4l1piJBqvfPMpouWwHTl4vJTRr5ae+gWoJC61HAfhuPWjZfr6+pRk2HieCdxzVTOcXi5Z8AWMrW7Fdr8jy6S1iJenWO0iraMfYfDXZ3a4mB72Gnwo6wH9RVGBrzn0N2iMv2nH0WwUeGz7NKA4adELGam3DSKw9GnwVOOMa4wP4iUlIlQeGxNW1+rWJ6XaotNi0y+kP2w==';
-        $data = $obj->aesDe($str);
 
-        dd($data);
+
+        try {
+            $data = $obj->aesDe($str);
+            LoopLog::error(sprintf("[%s][%s]", __CLASS__, $data));
+        } catch (\Exception $exception) {
+            $msg = $exception->getMessage();
+
+            LoopLog::error(sprintf("[%s][%s]", __CLASS__, $msg));
+        }
+
+
     }
 }
