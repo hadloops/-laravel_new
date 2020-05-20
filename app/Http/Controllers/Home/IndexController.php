@@ -149,7 +149,5 @@ class IndexController extends Controller
 
             LoopLog::error(sprintf("[%s][%s]", __CLASS__, $msg));
         }
-
-
     }
 }
