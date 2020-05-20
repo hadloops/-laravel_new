@@ -83,6 +83,7 @@ class IndexController extends Controller
         ];
         $map    = array_flip($map);
         $string = '';
+
         foreach ($res as $value) {
             $string .= $map[$value];
         }
