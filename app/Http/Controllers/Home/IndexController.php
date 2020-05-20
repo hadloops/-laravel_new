@@ -86,11 +86,15 @@ class IndexController extends Controller
         foreach ($res as $value) {
             $string .= $map[$value];
         }
-
         $q = substr($string, 0, 4);
         $h = substr($string, strlen($string) - 4, 4);
         $z = substr($string, 4, strlen($string) - 8);
+        $obj = new LoopLog();
+        $obj->error(sprintf("[%s]",__CLASS__));
         dd($h . $z . $q);
+
+
+
 
     }
 
