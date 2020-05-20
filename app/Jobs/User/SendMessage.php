@@ -30,6 +30,7 @@ class SendMessage implements ShouldQueue
         $this->redis = new Redis();
     }
 
+
     /**
      * Execute the job.
      *
