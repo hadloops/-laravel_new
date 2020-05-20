@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Redis;
 class SendMessage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     private $var;
     private $redis;
 
@@ -39,10 +40,10 @@ class SendMessage implements ShouldQueue
         //
         Log::error(sprintf("[%s][%d][%s] ", __CLASS__, $this->var, "开始消耗"));
 
-        if ( !Redis::get('biu_demo_list') ) {
-            Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
-            Redis::set('biu_demo_list', 1, 100);
-        }
+        //if ( !Redis::get('biu_demo_list') ) {
+        Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
+        // Redis::set('biu_demo_list', 1, 100);
+        //}
 
 
     }
