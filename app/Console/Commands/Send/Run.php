@@ -40,6 +40,6 @@ class Run extends Command
     {
         //
         (new IndexController())->run();
-       // \App\Loop\Message::sendMarkdownMsg('loop', '开始执行');
+        \App\Loop\Message::sendMarkdownMsg('loop', '开始执行');
     }
 }
