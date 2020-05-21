@@ -81,7 +81,7 @@ pvo+L0pzO3pisr6YLPPqacbOvQbuAjsa5ukMTRDjbuwSSUo=
 
         );
         $jdata = json_encode($data);
-        
+
         /**
          * 公钥加密
          *
@@ -91,10 +91,10 @@ pvo+L0pzO3pisr6YLPPqacbOvQbuAjsa5ukMTRDjbuwSSUo=
         if ( !$key ) {
             die('公钥不可用');
         }
-//公钥加密
-//openssl_public_encrypt 第一个参数只能是string
-//openssl_public_encrypt 第二个参数是处理后的数据
-//openssl_public_encrypt 第三个参数是openssl_pkey_get_public返回的资源类型
+        //公钥加密
+        //openssl_public_encrypt 第一个参数只能是string
+        //openssl_public_encrypt 第二个参数是处理后的数据
+        //openssl_public_encrypt 第三个参数是openssl_pkey_get_public返回的资源类型
         $return_en = openssl_public_encrypt($jdata, $crypted, $key);
         if ( !$return_en ) {
             return ('加密失败,请检查RSA秘钥');
