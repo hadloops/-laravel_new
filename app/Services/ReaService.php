@@ -102,7 +102,7 @@ pvo+L0pzO3pisr6YLPPqacbOvQbuAjsa5ukMTRDjbuwSSUo=
 
 
         $eb64_cry = base64_encode($crypted);
-        var_dump($eb64_cry);
+        dump($eb64_cry);
 
         echo "<hr>";
 
@@ -119,7 +119,7 @@ pvo+L0pzO3pisr6YLPPqacbOvQbuAjsa5ukMTRDjbuwSSUo=
 
         $arr = json_decode($decrypted, true);
 
-        var_dump($arr);
+        dump($arr);
     }
 
 }
