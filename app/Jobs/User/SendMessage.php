@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Redis;
 class SendMessage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     private $var;
     private $redis;
 
@@ -28,6 +29,7 @@ class SendMessage implements ShouldQueue
         $this->var   = $value;
         $this->redis = new Redis();
     }
+
 
     /**
      * Execute the job.
