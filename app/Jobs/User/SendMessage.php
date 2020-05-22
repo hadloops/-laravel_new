@@ -19,9 +19,9 @@ class SendMessage implements ShouldQueue
     private $redis;
 
     /**
-     * Create a new job instance.
+     * SendMessage constructor.
      *
-     * @return void
+     * @param $value
      */
     public function __construct($value)
     {
@@ -39,12 +39,9 @@ class SendMessage implements ShouldQueue
     public function handle()
     {
         //
-        Log::error(sprintf("[%s][%d][%s] ", __CLASS__, $this->var, "开始消耗"));
+        Log::error(sprintf("[%s][%s][%d][%s] ", __CLASS__, __FUNCTION__, $this->var, "开始消耗"));
 
-        //if ( !Redis::get('biu_demo_list') ) {
         Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
-        // Redis::set('biu_demo_list', 1, 100);
-        //}
 
 
     }
