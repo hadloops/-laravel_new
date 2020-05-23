@@ -5,7 +5,7 @@ namespace App\Console\Commands\Send;
 use App\Http\Controllers\Home\IndexController;
 use Illuminate\Console\Command;
 
-class Run extends Command
+class RunCommand extends Command
 {
     /**
      * The name and signature of the console command.

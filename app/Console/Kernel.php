@@ -2,7 +2,7 @@
 
 namespace App\Console;
 
-use App\Console\Commands\Send\Run;
+use App\Console\Commands\Send\RunCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
-        Run::class,
+        RunCommand::class,
     ];
 
     /**
