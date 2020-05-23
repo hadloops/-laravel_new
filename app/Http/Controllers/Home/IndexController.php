@@ -8,7 +8,6 @@ use App\Loop\Log as LoopLog;
 use App\Services\AesService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use function Couchbase\defaultDecoder;
 
 class IndexController extends Controller
 {
