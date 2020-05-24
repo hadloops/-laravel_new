@@ -4,6 +4,7 @@ namespace App\Console\Commands\Send;
 
 use App\Http\Controllers\Home\IndexController;
 use Illuminate\Console\Command;
+use App\Loop\Message;
 
 class RunCommand extends Command
 {
@@ -41,7 +42,7 @@ class RunCommand extends Command
         //
         echo '222';
         (new IndexController())->run();
-        \App\Loop\Message::sendMarkdownMsg('loop', '开始执行');
+        Message::sendMarkdownMsg('loop', '开始执行');
 
         echo '2333';
     }
