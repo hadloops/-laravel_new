@@ -18,6 +18,9 @@ class IndexController extends Controller
     //
     public function index()
     {
+        loop_log(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
+
+
         setcookie('ali_open_id', 1, time() + 86400 * 30, '/', $_SERVER['SERVER_NAME']);
 
 
