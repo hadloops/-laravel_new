@@ -8,7 +8,7 @@
 
 namespace App\Loop;
 
-use App\Loop\Curl;
+/*use App\Loop\Curl;*/
 
 class Message
 {

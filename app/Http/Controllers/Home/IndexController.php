@@ -18,13 +18,13 @@ class IndexController extends Controller
     //
     public function index()
     {
-        setcookie('ali_open_id',1, time()+86400*30, '/', $_SERVER['SERVER_NAME']);
+        setcookie('ali_open_id', 1, time() + 86400 * 30, '/', $_SERVER['SERVER_NAME']);
 
 
-        var_dump($_COOKIE,1);die;
+        var_dump($_COOKIE, 1);
+        die;
         Log::info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
     }
-
 
 
     public function run()
@@ -32,9 +32,7 @@ class IndexController extends Controller
 
         $time = mt_rand(10, 200);
         Log::error(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
-        $res = $this->dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSeconds($time)));
-
-        dd($res);
+        return $this->dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSeconds($time)));
 
 
     }
@@ -127,9 +125,6 @@ class IndexController extends Controller
 
 
     }
-
-
-
 
 
     public function test2()
