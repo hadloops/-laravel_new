@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Console\Commands\Send\RunCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\SendLoop;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,6 +17,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         //
         RunCommand::class,
+        SendLoop::class,
     ];
 
     /**

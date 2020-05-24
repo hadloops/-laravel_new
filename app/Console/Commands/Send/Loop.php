@@ -11,14 +11,14 @@ class Loop extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'loop';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'loop脚本';
 
     /**
      * Create a new command instance.

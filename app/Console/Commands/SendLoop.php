@@ -11,14 +11,14 @@ class SendLoop extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'send:loop';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = '发送脚本';
 
     /**
      * Create a new command instance.
