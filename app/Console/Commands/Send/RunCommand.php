@@ -5,7 +5,7 @@ namespace App\Console\Commands\Send;
 use App\Http\Controllers\Home\IndexController;
 use Illuminate\Console\Command;
 
-class Run extends Command
+class RunCommand extends Command
 {
     /**
      * The name and signature of the console command.
@@ -39,7 +39,10 @@ class Run extends Command
     public function handle()
     {
         //
+        echo '222';
         (new IndexController())->run();
         \App\Loop\Message::sendMarkdownMsg('loop', '开始执行');
+
+        echo '2333';
     }
 }

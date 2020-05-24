@@ -39,7 +39,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
-| Run The Application
+| RunCommand The Application
 |--------------------------------------------------------------------------
 |
 | Once we have the application, we can handle the incoming request
