@@ -31,7 +31,6 @@ class SendMessage implements ShouldQueue
     }
 
 
-
     /**
      * Execute the job.
      *
@@ -43,6 +42,10 @@ class SendMessage implements ShouldQueue
         Log::error(sprintf("[%s][%s][%d][%s] ", __CLASS__, __FUNCTION__, $this->var, "开始消耗"));
 
         Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
+
+        $time = mt_rand(1, 10);
+        \Illuminate\Support\Facades\Log::info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
+        $this->dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSeconds($time)));
 
 
     }
