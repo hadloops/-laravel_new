@@ -151,6 +151,6 @@ class IndexController extends Controller
 
     public function user(Request $request)
     {
-        dump('mobile_device_code_redis_key_' . md5($request->get('u')));
+        dump('mobile_device_code_redis_key_' . md5($request->get('u','')));
     }
 }
