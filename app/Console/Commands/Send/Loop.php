@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\Send;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Console\Command;
 
 class Loop extends Command
@@ -38,5 +39,6 @@ class Loop extends Command
     public function handle()
     {
         //
+        Log::info(sprintf("[%s][%s]", __CLASS__, __FUNCTION__));
     }
 }

@@ -148,4 +148,9 @@ class IndexController extends Controller
             LoopLog::error(sprintf("[%s][%s]", __CLASS__, $msg));
         }
     }
+
+    public function user(Request $request)
+    {
+        dump('mobile_device_code_redis_key_' . md5($request->get('u')));
+    }
 }
