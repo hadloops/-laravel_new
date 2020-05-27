@@ -14,14 +14,15 @@ class IndexController extends Controller
 
         $sign = $_SERVER;
 
-        var_dump($sign);die;
+        var_dump($sign);
+        die;
 
 
-
-        var_dump($request->all());die;
+        var_dump($request->all());
+        die;
         $bodyData = @file_get_contents('php://input');
 //将获取到的值转化为数组格式
-        $bodyData = json_decode($bodyData,true);
+        $bodyData = json_decode($bodyData, true);
 
         var_dump($bodyData);
     }
