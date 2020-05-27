@@ -151,6 +151,15 @@ class IndexController extends Controller
 
     public function user(Request $request)
     {
+        dump(mb_strlen('{\\\"order_id\\\":115905613749599,\\\"status\\\":\\\"MERCHANT_PAID\\\"}'));
+
+
         dump('mobile_device_code_redis_key_' . md5($request->get('u','')));
     }
+
+    public function stu()
+    {
+        $bodyData = file_get_contents('php://input');
+    }
+
 }
