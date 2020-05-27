@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\User\SendMessage;
 use App\Loop\Log as LoopLog;
 use App\Services\AesService;
+use App\Services\ReaService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -149,12 +150,13 @@ class IndexController extends Controller
         }
     }
 
+
     public function user(Request $request)
     {
         dump(mb_strlen('{\\\"order_id\\\":115905613749599,\\\"status\\\":\\\"MERCHANT_PAID\\\"}'));
 
 
-        dump('mobile_device_code_redis_key_' . md5($request->get('u','')));
+        dump('mobile_device_code_redis_key_' . md5($request->get('u', '')));
     }
 
     public function stu()
@@ -162,4 +164,11 @@ class IndexController extends Controller
         $bodyData = file_get_contents('php://input');
     }
 
+
+    public function aes()
+    {
+        $obj = new ReaService();
+
+        return $obj->test();
+    }
 }
