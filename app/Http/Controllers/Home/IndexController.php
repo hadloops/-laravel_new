@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\User\SendMessage;
 use App\Loop\Log as LoopLog;
 use App\Services\AesService;
+use App\Services\ReaService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -150,5 +151,12 @@ class IndexController extends Controller
 
             LoopLog::error(sprintf("[%s][%s]", __CLASS__, $msg));
         }
+    }
+
+    public function aes()
+    {
+        $obj = new ReaService();
+
+        return $obj->test();
     }
 }
