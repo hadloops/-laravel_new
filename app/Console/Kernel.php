@@ -6,6 +6,7 @@ use App\Console\Commands\Send\RunCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Console\Commands\SendLoop;
+use App\Console\Commands\Send\SendEmails;
 
 class Kernel extends ConsoleKernel
 {
@@ -18,6 +19,7 @@ class Kernel extends ConsoleKernel
         //
         RunCommand::class,
         SendLoop::class,
+        SendEmails::class,
     ];
 
     /**

@@ -14,17 +14,27 @@ class IndexController extends Controller
 
         $sign = $_SERVER;
 
-        var_dump($sign);
-        die;
+//        var_dump($sign);s
+//        die;
 
 
-        var_dump($request->all());
+        var_dump(self::em_getallheaders());
         die;
         $bodyData = @file_get_contents('php://input');
 //将获取到的值转化为数组格式
         $bodyData = json_decode($bodyData, true);
 
         var_dump($bodyData);
+    }
+
+    function em_getallheaders()
+    {
+        foreach ($_SERVER as $name => $value) {
+            if ( substr($name, 0, 5) == 'HTTP_' ) {
+                $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
+            }
+        }
+        return $headers;
     }
 
 
