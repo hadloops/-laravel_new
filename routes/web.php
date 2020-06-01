@@ -28,3 +28,4 @@ Route::any('/user', 'Home\IndexController@user');
 Route::any('/stu', 'Student\IndexController@index');
 
 Route::any('/aes', 'Home\IndexController@aes');
+Route::any('/web', 'Web\IndexController@web');
