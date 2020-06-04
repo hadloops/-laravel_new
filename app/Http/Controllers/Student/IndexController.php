@@ -39,7 +39,11 @@ class IndexController extends Controller
 
     public function index()
     {
-        if ('1e3' == '1000') echo 'LOL';
+        if ( '1e3' == '1000' ) {
+            echo 'LOL';
+        }
+
+        //echo  gethostbyname('baidu.com');
     }
 
 
