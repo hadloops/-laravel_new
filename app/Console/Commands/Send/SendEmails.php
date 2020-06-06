@@ -2,25 +2,23 @@
 
 namespace App\Console\Commands\Send;
 
-use App\Http\Controllers\Home\IndexController;
 use Illuminate\Console\Command;
-use App\Loop\Message;
 
-class RunCommand extends Command
+class SendEmails extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'run';
+    protected $signature = 'send:mail';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '入队脚本';
+    protected $description = 'Command description';
 
     /**
      * Create a new command instance.
@@ -40,10 +38,5 @@ class RunCommand extends Command
     public function handle()
     {
         //
-        echo '222';
-        (new IndexController())->run();
-        Message::sendMarkdownMsg('loop', '开始执行');
-
-        echo '2333';
     }
 }

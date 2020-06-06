@@ -23,4 +23,9 @@ Route::any('/home', 'Home\IndexController@home');
 Route::any('/sync', 'Home\IndexController@sync');
 Route::any('/json', 'Home\IndexController@json');
 Route::any('/info', 'Home\IndexController@test');
+
+Route::any('/user', 'Home\IndexController@user');
+Route::any('/stu', 'Student\IndexController@index');
+
 Route::any('/aes', 'Home\IndexController@aes');
+Route::any('/web', 'Web\IndexController@web');

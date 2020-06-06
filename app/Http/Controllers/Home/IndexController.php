@@ -19,12 +19,9 @@ class IndexController extends Controller
     //
     public function index()
     {
-        setcookie('ali_open_id', 1, time() + 86400 * 30, '/', $_SERVER['SERVER_NAME']);
+        info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
 
-
-        var_dump($_COOKIE, 1);
-        die;
-        Log::info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
+        dd(11);
     }
 
 
@@ -152,6 +149,21 @@ class IndexController extends Controller
             LoopLog::error(sprintf("[%s][%s]", __CLASS__, $msg));
         }
     }
+
+
+    public function user(Request $request)
+    {
+        dump(mb_strlen('{\\\"order_id\\\":115905613749599,\\\"status\\\":\\\"MERCHANT_PAID\\\"}'));
+
+
+        dump('mobile_device_code_redis_key_' . md5($request->get('u', '')));
+    }
+
+    public function stu()
+    {
+        $bodyData = file_get_contents('php://input');
+    }
+
 
     public function aes()
     {
