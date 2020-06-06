@@ -19,9 +19,7 @@ class IndexController extends Controller
     //
     public function index()
     {
-        info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
-
-        dd(11);
+        phpinfo();
     }
 
 
