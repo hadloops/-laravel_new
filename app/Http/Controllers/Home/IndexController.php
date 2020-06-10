@@ -18,7 +18,22 @@ class IndexController extends Controller
     //
     public function index()
     {
-        phpinfo();
+        //解密的密文
+        $sign = "H6O61Lztu/NJtQjW0MXfFrPCt834BP7WwrNMMnfDOqIwvzuUFeseZAjQQ4OClLkdKFs2Iij+z2q1vHuMNx19GJuq6j8LeVE9cu1PZ2GWmXHY0Z08CaVZitB4IjOfijIJYXZe+hopLbVClvslNjLFXfunLJix6LfWZYCGxc3MoyuprZ+RDqlpzMc+iSy1k2r5BSNj0Jz30GFuZRbyRvt6Xw==";
+
+        //$sign = 'rb7z+ST9tEVSoRKzRqLDgJpwsa4pMPFGELd1o+kLQAUWxjR0qjPjrAlm/ZGP4EguhMpzb3H5ftHLYlqEDs8V7TkeUV0V17nH6f71gBcSKo/2YpkDUGYY1FGBcNjAzBzkYdaKcHPb5PqLRQX9Xfx8yG5HjpidOlMYAivnq8d7mcW7Fmt+5SNpFCP+m9+sfGEecWtTYDU+5nrWGGuB9D/72w==';
+        //向量
+        $iv = "B393QpfxWodwG410W7JBNQ==";
+
+        //sessionKey
+        $sessionKey = '0s14WcTa2jxMuzB4pGPD+g==';
+
+
+        $data = openssl_decrypt(base64_decode($sign), 'AES-128-CBC', base64_decode($sessionKey), OPENSSL_RAW_DATA,
+            base64_decode($iv));
+
+        var_dump($data);
+
     }
 
 
