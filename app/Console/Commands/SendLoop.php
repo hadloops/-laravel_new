@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Http\Controllers\Api\UsersController;
 
 class SendLoop extends Command
 {
@@ -11,7 +12,7 @@ class SendLoop extends Command
      *
      * @var string
      */
-    protected $signature = 'send:loop';
+    protected $signature = 'test';
 
     /**
      * The console command description.
@@ -35,8 +36,9 @@ class SendLoop extends Command
      *
      * @return mixed
      */
-    public function handle()
+    public function handle(UsersController $usersController)
     {
         //
+        $usersController->rpush();
     }
 }
