@@ -19,14 +19,16 @@ class IndexController extends Controller
     public function index()
     {
         //解密的密文
-        $sign = "H6O61Lztu/NJtQjW0MXfFrPCt834BP7WwrNMMnfDOqIwvzuUFeseZAjQQ4OClLkdKFs2Iij+z2q1vHuMNx19GJuq6j8LeVE9cu1PZ2GWmXHY0Z08CaVZitB4IjOfijIJYXZe+hopLbVClvslNjLFXfunLJix6LfWZYCGxc3MoyuprZ+RDqlpzMc+iSy1k2r5BSNj0Jz30GFuZRbyRvt6Xw==";
+        //$sign = "H6O61Lztu/NJtQjW0MXfFrPCt834BP7WwrNMMnfDOqIwvzuUFeseZAjQQ4OClLkdKFs2Iij+z2q1vHuMNx19GJuq6j8LeVE9cu1PZ2GWmXHY0Z08CaVZitB4IjOfijIJYXZe+hopLbVClvslNjLFXfunLJix6LfWZYCGxc3MoyuprZ+RDqlpzMc+iSy1k2r5BSNj0Jz30GFuZRbyRvt6Xw==";
 
-        //$sign = 'rb7z+ST9tEVSoRKzRqLDgJpwsa4pMPFGELd1o+kLQAUWxjR0qjPjrAlm/ZGP4EguhMpzb3H5ftHLYlqEDs8V7TkeUV0V17nH6f71gBcSKo/2YpkDUGYY1FGBcNjAzBzkYdaKcHPb5PqLRQX9Xfx8yG5HjpidOlMYAivnq8d7mcW7Fmt+5SNpFCP+m9+sfGEecWtTYDU+5nrWGGuB9D/72w==';
+        $sign = 'sWPvxBz1Bg50237jx+PdxNCbkZGiSM3Mwhsfieomb6TPQ6ZRAGYhiHFhPK6y1Fp3HSMJfiWSdK3apQkvR4vyX11N0s70IKaVidf2Lg5tTqrMzXZQNO+UBk3cwkjjAp7ptikgXz3PrHm6exeK6x0rVycBde6B9Rwp8/ZqfvbcOxzBWrClg+2EBFMTe83nNidgM7MKuIuWgIRojEc4aPCStg==';
         //向量
-        $iv = "B393QpfxWodwG410W7JBNQ==";
+        //$iv = "B393QpfxWodwG410W7JBNQ==";
+        $iv = "LCr7pqkpJoB+Bl5vOgCB3w==";
 
         //sessionKey
-        $sessionKey = '0s14WcTa2jxMuzB4pGPD+g==';
+        //$sessionKey = '0s14WcTa2jxMuzB4pGPD+g==';
+        $sessionKey = 'rM6SFASdzbU7EHqESVR6kg==';
 
 
         $data = openssl_decrypt(base64_decode($sign), 'AES-128-CBC', base64_decode($sessionKey), OPENSSL_RAW_DATA,
@@ -39,6 +41,12 @@ class IndexController extends Controller
 
     public function run()
     {
+        $str= '{
+	"key": "b05deda521f3f2a40c323401e90ad2df",
+	"message": "%7B%22order_id%22%3A%22115917856708704%22%2C%22status%22%3A%22MERCHANT_PAID%22%7D"
+}';
+
+        var_dump(urldecode($str));die;
 
         $time = mt_rand(1, 10);
         info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
