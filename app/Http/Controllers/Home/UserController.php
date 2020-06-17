@@ -20,4 +20,9 @@ class UserController extends Controller
         return $userService->store();
     }
 
+    public function test()
+    {
+
+    }
+
 }
