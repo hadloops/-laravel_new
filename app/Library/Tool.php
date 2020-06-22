@@ -11,6 +11,7 @@ namespace App\Library;
 
 class Tool implements ToolInterface
 {
+
     public function execute(array $data = [])
     {
 
