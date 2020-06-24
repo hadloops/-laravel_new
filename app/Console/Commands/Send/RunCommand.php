@@ -40,9 +40,12 @@ class RunCommand extends Command
     public function handle()
     {
         //
-
-        while(true){
+        $i = 0;
+        while (true) {
             (new IndexController())->run();
+
+            echo $i . "\n";
+            $i++;
         }
 
     }
