@@ -40,10 +40,6 @@ class RunCommand extends Command
     public function handle()
     {
         //
-        echo '222';
         (new IndexController())->run();
-        Message::sendMarkdownMsg('loop', '开始执行');
-
-        echo '2333';
     }
 }
