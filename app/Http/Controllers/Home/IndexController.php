@@ -19,7 +19,8 @@ class IndexController extends Controller
     public function index()
     {
         phpinfo();
-        echo 11;die;
+        echo 11;
+        die;
         //解密的密文
         //$sign = "H6O61Lztu/NJtQjW0MXfFrPCt834BP7WwrNMMnfDOqIwvzuUFeseZAjQQ4OClLkdKFs2Iij+z2q1vHuMNx19GJuq6j8LeVE9cu1PZ2GWmXHY0Z08CaVZitB4IjOfijIJYXZe+hopLbVClvslNjLFXfunLJix6LfWZYCGxc3MoyuprZ+RDqlpzMc+iSy1k2r5BSNj0Jz30GFuZRbyRvt6Xw==";
 
@@ -43,13 +44,6 @@ class IndexController extends Controller
 
     public function run()
     {
-        $str= '{
-	"key": "b05deda521f3f2a40c323401e90ad2df",
-	"message": "%7B%22order_id%22%3A%22115917856708704%22%2C%22status%22%3A%22MERCHANT_PAID%22%7D"
-}';
-
-        var_dump(urldecode($str));die;
-
         $time = mt_rand(1, 10);
         info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
         return $this->dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSeconds($time)));
