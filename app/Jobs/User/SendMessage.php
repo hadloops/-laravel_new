@@ -41,7 +41,7 @@ class SendMessage implements ShouldQueue
         //
         info(sprintf("[%s][%s][%d][%s] ", __CLASS__, __FUNCTION__, $this->var, "开始消耗"));
 
-        // Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
+        Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
 
         info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
         $time = mt_rand(1, 20);
