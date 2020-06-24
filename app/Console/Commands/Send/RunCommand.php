@@ -41,7 +41,7 @@ class RunCommand extends Command
     {
         //
         $i = 0;
-        while (true) {
+        while ($i < 100) {
             (new IndexController())->run();
 
             echo $i . "\n";
