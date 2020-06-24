@@ -40,6 +40,10 @@ class RunCommand extends Command
     public function handle()
     {
         //
-        (new IndexController())->run();
+
+        while(true){
+            (new IndexController())->run();
+        }
+
     }
 }

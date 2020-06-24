@@ -46,7 +46,7 @@ class IndexController extends Controller
     {
         $time = mt_rand(1, 10);
         info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
-        return $this->dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSeconds($time)));
+        dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSeconds($time)));
 
 
     }
