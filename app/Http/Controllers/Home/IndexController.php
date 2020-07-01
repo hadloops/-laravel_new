@@ -18,8 +18,8 @@ class IndexController extends Controller
     //
     public function index()
     {
-        phpinfo();
-        echo 11;
+        echo $_SERVER['SERVER_PORT'];
+
         die;
         //解密的密文
         //$sign = "H6O61Lztu/NJtQjW0MXfFrPCt834BP7WwrNMMnfDOqIwvzuUFeseZAjQQ4OClLkdKFs2Iij+z2q1vHuMNx19GJuq6j8LeVE9cu1PZ2GWmXHY0Z08CaVZitB4IjOfijIJYXZe+hopLbVClvslNjLFXfunLJix6LfWZYCGxc3MoyuprZ+RDqlpzMc+iSy1k2r5BSNj0Jz30GFuZRbyRvt6Xw==";

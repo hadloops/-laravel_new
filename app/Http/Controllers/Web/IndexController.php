@@ -10,6 +10,7 @@ class IndexController extends Controller
     //
     public function web()
     {
+        echo 11;die;
         return view('welcome');
     }
 
