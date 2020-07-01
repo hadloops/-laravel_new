@@ -18,7 +18,7 @@ class IndexController extends Controller
     //
     public function serverName()
     {
-        return ($_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://' . $_SERVER['SERVER_NAME'];
+        return (($_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://') . $_SERVER['SERVER_NAME'];
     }
 
     public function index()
