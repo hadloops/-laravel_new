@@ -16,9 +16,14 @@ class IndexController extends Controller
     }
 
     //
+    public function serverName()
+    {
+        return ($_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://' . $_SERVER['SERVER_NAME'];
+    }
+
     public function index()
     {
-        echo $_SERVER['SERVER_PORT'];
+        echo self::serverName();
 
         die;
         //解密的密文
