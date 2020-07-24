@@ -31,3 +31,4 @@ Route::any('/aes', 'Home\IndexController@aes');
 Route::any('/web', 'Web\IndexController@web');
 Route::any('/e', 'Api\UsersController@export');
 Route::any('/t', 'Home\UserController@test');
+Route::any('/m', 'Home\UserController@m');
