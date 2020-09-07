@@ -199,9 +199,13 @@ class UserController extends Controller
         $redis = app('redis');
 
 
-        $a = $redis->set('wx-test',json_encode([]));
+        //$a = $redis->set('wx-test',json_encode([]));
 
-        var_dump($a);die;
+        $a=$redis->get('wx-test');
+
+
+        var_dump(json_decode($a,true));
+
     }
 
 
