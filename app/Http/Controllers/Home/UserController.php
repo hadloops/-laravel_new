@@ -196,7 +196,12 @@ class UserController extends Controller
 
     public function b()
     {
-        echo 1;
+        $redis = app('redis');
+
+
+        $a = $redis->set('wx-test',json_encode([]));
+
+        var_dump($a);die;
     }
 
 
