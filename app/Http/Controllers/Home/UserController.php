@@ -204,7 +204,10 @@ class UserController extends Controller
         $a=$redis->get('wx-test');
 
 
-        var_dump(json_decode($a,true));
+        $b = json_decode($a,true);
+
+
+        var_dump($a,$b);die;
 
     }
 
