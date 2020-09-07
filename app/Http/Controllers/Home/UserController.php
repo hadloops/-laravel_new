@@ -207,7 +207,11 @@ class UserController extends Controller
         $b = json_decode($a,true);
 
 
-        var_dump($a,$b);die;
+        if (empty($b)){
+            echo 11;
+        } else {
+            echo 22;
+        }
 
     }
 
