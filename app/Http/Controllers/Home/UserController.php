@@ -194,5 +194,10 @@ class UserController extends Controller
         dump(substr($orderId, 0, 13 - $location) . substr($orderId, 13 - $location + 1, 3));
     }
 
+    public function b()
+    {
+        echo 1;
+    }
+
 
 }

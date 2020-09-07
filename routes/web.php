@@ -33,3 +33,4 @@ Route::any('/e', 'Api\UsersController@export');
 Route::any('/t', 'Home\UserController@test');
 Route::any('/m', 'Home\UserController@m');
 Route::any('/o', 'Home\UserController@o');
+Route::any('/b', 'Home\UserController@b');
