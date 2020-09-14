@@ -38,11 +38,26 @@ class Sync extends Command
     public function handle()
     {
         //
-        $this->sync(1,2);
+        $this->demo('test.go');
+
     }
 
-    public function sync($goodsId,$skuId){
+    public function sync($goodsId, $skuId)
+    {
 
         var_dump(get_defined_vars());
     }
+
+
+    public function demo($file)
+    {
+        $path = public_path("/../script/");
+        if ( !file($path . $file) ) {
+
+            info(sprintf('[%s][%s] go file is not', __CLASS__, __FUNCTION__, $file));
+        }
+
+        echo exec("cd $path && go build $file");
+    }
+
 }
