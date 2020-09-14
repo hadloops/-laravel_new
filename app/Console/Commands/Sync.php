@@ -57,7 +57,7 @@ class Sync extends Command
             info(sprintf('[%s][%s] go file is not', __CLASS__, __FUNCTION__, $file));
         }
 
-        echo exec("cd $path && chmod a+x go.sh && sh go.sh $file");
+        exec("cd $path && chmod a+x go.sh && sh go.sh $file ");
     }
 
 }
