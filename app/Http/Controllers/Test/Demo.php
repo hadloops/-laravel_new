@@ -10,6 +10,27 @@ class Demo extends Controller
     //
     public function demo()
     {
-        echo 11;
+
+        $demo = new \stdClass();
+
+        if ( empty((array) $demo) ) {
+            return 'empty';
+        } else {
+            return 'true';
+        }
+    }
+
+
+    /**
+     *  获取请求中变量的值
+     *
+     * @param Request $request  请求
+     * @param         $varName  变量名
+     *
+     * @return mixed  变量值
+     */
+    public function varValue(Request $request, $varName)
+    {
+        return $request->get($varName, '');
     }
 }
