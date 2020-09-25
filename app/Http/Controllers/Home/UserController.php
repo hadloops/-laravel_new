@@ -185,11 +185,16 @@ class UserController extends Controller
 
         $orderId       = (string) $request->get('o', 1);
         $orderIdLength = strlen($orderId);
-        if ( $orderIdLength != 15 || substr($orderId, 0, 3) == '115' ) {
+
+        if ( $orderIdLength != 15 || substr($orderId, 0, 3) == '115' || substr($orderId, 0, 3) == '116' ) {
             return $orderId;
         }
 
         $location = $orderId[14] % 3;
+
+        if ( substr($orderId, 13 - $location, 1) != $location ) {
+            return $orderId;
+        }
 
         dump(substr($orderId, 0, 13 - $location) . substr($orderId, 13 - $location + 1, 3));
     }
