@@ -16,7 +16,6 @@ class UserController extends Controller
     public function __construct()
     {
         parent::__construct();
-        info(sprintf('[%s][%s] request data is %s', __CLASS__, __FUNCTION__, json_encode(request())));
     }
 
     public function index(UserService $userService)
@@ -182,7 +181,7 @@ class UserController extends Controller
 
     public function o(Request $request)
     {
-
+        info(sprintf('[%s][%s] request data is %s', __CLASS__, __FUNCTION__, json_encode($request->all())));
 
         $orderId       = (string) $request->get('o', 1);
         $orderIdLength = strlen($orderId);
