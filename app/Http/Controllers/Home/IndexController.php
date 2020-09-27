@@ -58,7 +58,7 @@ class IndexController extends Controller
 
     public function home(Request $request)
     {
-        info(sprintf('[%s][%s] request data is %s', __CLASS__, __FUNCTION__, json_encode($request->all())));
+        info(sprintf('[%s][%s] request data is %s', __CLASS__, __FUNCTION__, json_encode(request()->all())));
         $str = $request->get('u');
 
         $res    = str_split($str);
