@@ -206,13 +206,13 @@ class UserController extends Controller
 
         //$a = $redis->set('wx-test',json_encode([]));
 
-        $a=$redis->get('wx-test');
+        $a = $redis->get('wx-test');
 
 
-        $b = json_decode($a,true);
+        $b = json_decode($a, true);
 
 
-        if (empty($b)){
+        if ( empty($b) ) {
             echo 11;
         } else {
             echo 22;
