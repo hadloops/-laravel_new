@@ -16,6 +16,7 @@ class UserController extends Controller
     public function __construct()
     {
         parent::__construct();
+        info(sprintf('[%s][%s] request data is %s', __CLASS__, __FUNCTION__, json_encode(request())));
     }
 
     public function index(UserService $userService)
