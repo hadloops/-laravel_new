@@ -50,9 +50,10 @@ class Sync extends Command
         if ( !file($path . $file) ) {
             echo '文件不存在';
             info(sprintf('[%s][%s] go file is not', __CLASS__, __FUNCTION__, $file));
+            exit();
         }
 
-        exec("cd $path && chmod a+x $file && ./$file ")
+        exec("cd $path && chmod a+x $file && ./$file ");
     }
 
 }
