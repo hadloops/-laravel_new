@@ -48,11 +48,11 @@ class Sync extends Command
         $path = public_path("/../../go_script/");
 
         if ( !file($path . $file) ) {
-
+            echo '文件不存在';
             info(sprintf('[%s][%s] go file is not', __CLASS__, __FUNCTION__, $file));
         }
 
-        exec("cd $path && chmod a+x $file && ./$file ");
+        exec("cd $path && chmod a+x $file && ./$file ")
     }
 
 }
