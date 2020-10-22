@@ -53,7 +53,7 @@ class Sync extends Command
             exit();
         }
 
-        exec("cd $path && chmod a+x $file && ./$file ");
+        echo exec("cd $path && chmod a+x $file && ./$file ");
     }
 
 }
