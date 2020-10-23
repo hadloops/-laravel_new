@@ -1,3 +1,0 @@
-[submodule "app/ServicesLib"]
-	path = app/ServicesLib
-	url = git@gitee.com:hackloop/son.git
