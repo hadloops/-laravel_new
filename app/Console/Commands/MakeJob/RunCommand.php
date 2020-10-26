@@ -3,6 +3,7 @@
 namespace App\Console\Commands\MakeJob;
 
 use App\Jobs\Command\RunCommandJob;
+use App\Loop\Message;
 use Illuminate\Console\Command;
 
 class RunCommand extends Command
@@ -39,7 +40,6 @@ class RunCommand extends Command
     public function handle()
     {
         //
-
 
         dispatch((new RunCommandJob())->onQueue('make:job'));
 
