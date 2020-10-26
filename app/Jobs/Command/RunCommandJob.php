@@ -2,6 +2,7 @@
 
 namespace App\Jobs\Command;
 
+use App\Jobs\User\SendMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -32,5 +33,9 @@ class RunCommandJob implements ShouldQueue
         //
 
         info(sprintf('[%s][%s][开始消耗]', 'RunCommandJob', __FUNCTION__));
+
+        $time = mt_rand(1, 10);
+        info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
+        dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSeconds($time)));
     }
 }
