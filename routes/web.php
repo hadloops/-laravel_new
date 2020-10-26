@@ -36,3 +36,4 @@ Route::any('/o', 'Home\UserController@o');
 Route::any('/b', 'Home\UserController@b');
 Route::any('/demo', 'Test\Demo@demo');
 Route::any('/handle', 'Test\Sync@handle');
+Route::any('/job', 'Test\Sync@makeJob');

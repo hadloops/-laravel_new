@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Test;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\Command\RunCommandJob;
 use App\Loop\Stack;
 use Illuminate\Http\Request;
 
 class Sync extends Controller
 {
-   public function handle()
-   {
+    public function handle()
+    {
 
 
-       $str = '{
+        $str = '{
     "top_data": {
         "goods_list": [
             {
@@ -81,7 +82,7 @@ class Sync extends Controller
     }
 }';
 
-        $arr = json_decode($str,true);
+        $arr = json_decode($str, true);
 
 
         dd($arr);
@@ -92,5 +93,10 @@ class Sync extends Controller
 //        $flag = Stack::$openCache;
 //
 //        var_dump($flag);die;
-   }
+    }
+
+    public function makeJob()
+    {
+        echo dispatch((new RunCommandJob())->onQueue('make:job'));
+    }
 }
