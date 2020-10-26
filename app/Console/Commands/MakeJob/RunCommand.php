@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\MakeJob;
 
+use App\Jobs\Command\RunCommandJob;
 use Illuminate\Console\Command;
 
 class RunCommand extends Command
@@ -11,10 +12,10 @@ class RunCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:job';
+    protected $signature = 'make:test:job';
 
     /**
-     * The console command description.
+     * The console command description
      *
      * @var string
      */
@@ -38,6 +39,9 @@ class RunCommand extends Command
     public function handle()
     {
         //
+
+
+        dispatch((new RunCommandJob())->onQueue('make:job'));
 
 
     }
