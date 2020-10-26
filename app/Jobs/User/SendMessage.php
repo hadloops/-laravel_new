@@ -2,14 +2,12 @@
 
 namespace App\Jobs\User;
 
-use App\Loop\Log;
 use App\Loop\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Redis;
 
 class SendMessage implements ShouldQueue
 {
@@ -26,8 +24,7 @@ class SendMessage implements ShouldQueue
     public function __construct($value)
     {
         //
-        $this->var   = $value;
-        $this->redis = new Redis();
+        $this->var = $value;
     }
 
 
@@ -40,10 +37,7 @@ class SendMessage implements ShouldQueue
     {
         //
         info(sprintf("[%s][%s][%d][%s] ", __CLASS__, __FUNCTION__, $this->var, "开始消耗"));
-
         Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
-
-        info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
         dispatch((new SendMessage('test'))->onQueue('user_login')->delay(now()->addSeconds(1)));
 
 
