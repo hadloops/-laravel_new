@@ -38,3 +38,4 @@ Route::any('/demo', 'Test\Demo@demo');
 Route::any('/handle', 'Test\Sync@handle');
 Route::any('/job', 'Test\Sync@makeJob');
 Route::any('/mb', 'Test\Sync@m');
+Route::any('/hrc', 'Test\Sync@t');
