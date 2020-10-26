@@ -44,8 +44,7 @@ class SendMessage implements ShouldQueue
         Message::sendMarkdownMsg("开始消耗", "$this->var ---->开始消耗");
 
         info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
-        $time = mt_rand(1, 20);
-        dispatch((new SendMessage($time))->onQueue('user_login')->delay(now()->addSeconds($time)));
+        dispatch((new SendMessage('test'))->onQueue('user_login')->delay(now()->addSeconds(1)));
 
 
     }
