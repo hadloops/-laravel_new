@@ -112,8 +112,7 @@ class Sync extends Controller
               ☺️😊🙃🙂😇 \n";
 
 
-
-        var_dump($str);
+        echo $str;
 
 
     }
