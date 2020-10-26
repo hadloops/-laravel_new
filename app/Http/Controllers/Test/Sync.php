@@ -97,6 +97,9 @@ class Sync extends Controller
 
     public function makeJob()
     {
-        echo dispatch((new RunCommandJob())->onQueue('make:job'));
+        $time = mt_rand(1, 20);
+        $info = dispatch((new RunCommandJob())->onQueue('make:job')->delay(now()->addSeconds($time)));
+
+        dd($info);
     }
 }
