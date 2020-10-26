@@ -16,12 +16,13 @@ class SendMessage implements ShouldQueue
     private $var;
     private $redis;
 
+
     /**
      * SendMessage constructor.
      *
-     * @param $value
+     * @param string $value
      */
-    public function __construct($value)
+    public function __construct($value = 'default')
     {
         //
         $this->var = $value;
