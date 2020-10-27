@@ -50,8 +50,12 @@ class IndexController extends Controller
     public function run()
     {
         $time = mt_rand(1, 10);
-        info(sprintf("[%s] [%s]", __CLASS__, date("Y-m-d H:i:s")));
-        dispatch((new SendMessage($time))->onQueue('user:login')->delay(now()->addSeconds($time)));
+
+        $info = dispatch((new SendMessage($time))->onQueue('user:login')->delay(now()->addSeconds($time)));
+
+        info(sprintf("[%s][%s] info is %s", __CLASS__, date("Y-m-d H:i:s"), json_encode($info)));
+
+        dd($info);
 
 
     }

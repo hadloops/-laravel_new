@@ -2,6 +2,7 @@
 
 namespace App\Jobs\User;
 
+use App\Jobs\Command\RunCommandJob;
 use App\Loop\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -46,7 +47,7 @@ class SendMessage implements ShouldQueue
               ☺️😊🙃🙂😇 \n
 
              > -->【开始消耗】<-- \n > " . __CLASS__ . "\n\n" . " > 现在时间  " . date("Y-m-d H:i:s" . "\n"));
-        dispatch((new SendMessage('test'))->onQueue('make:job')->delay(now()->addSeconds(1)));
+        dispatch((new RunCommandJob('test'))->onQueue('make:job')->delay(now()->addSeconds(1)));
 
 
     }

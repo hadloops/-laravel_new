@@ -13,14 +13,17 @@ class RunCommandJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $var;
+
     /**
-     * Create a new job instance.
+     * RunCommandJob constructor.
      *
-     * @return void
+     * @param string $handle
      */
-    public function __construct()
+    public function __construct($handle = 'default')
     {
         //
+        $this->var = $handle;
     }
 
     /**
@@ -34,6 +37,6 @@ class RunCommandJob implements ShouldQueue
 
         info(sprintf('[%s][%s][开始消耗]', 'RunCommandJob', __FUNCTION__));
         $time = mt_rand(1, 10);
-        dispatch((new SendMessage(__CLASS__))->onQueue('user:login')->delay(now()->addSeconds($time)));
+        dispatch((new SendMessage($this->var))->onQueue('user:login')->delay(now()->addSeconds($time)));
     }
 }
