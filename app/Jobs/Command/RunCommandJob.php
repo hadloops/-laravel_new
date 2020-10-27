@@ -34,6 +34,6 @@ class RunCommandJob implements ShouldQueue
 
         info(sprintf('[%s][%s][开始消耗]', 'RunCommandJob', __FUNCTION__));
         $time = mt_rand(1, 10);
-        dispatch((new SendMessage(__CLASS__))->onQueue('user_login')->delay(now()->addSeconds($time)));
+        dispatch((new SendMessage(__CLASS__))->onQueue('user:login')->delay(now()->addSeconds($time)));
     }
 }

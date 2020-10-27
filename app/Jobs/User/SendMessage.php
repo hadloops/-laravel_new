@@ -46,7 +46,7 @@ class SendMessage implements ShouldQueue
               ☺️😊🙃🙂😇 \n
 
              > -->【开始消耗】<-- \n > " . __CLASS__ . "\n\n");
-        dispatch((new SendMessage('test'))->onQueue('user_login')->delay(now()->addSeconds(1)));
+        dispatch((new SendMessage('test'))->onQueue('make:job')->delay(now()->addSeconds(1)));
 
 
     }
