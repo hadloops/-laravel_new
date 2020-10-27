@@ -55,6 +55,7 @@ class IndexController extends Controller
 
         info(sprintf("[%s][%s] info is %s", __CLASS__, date("Y-m-d H:i:s"), json_encode($info)));
 
+        
         dd($info);
 
 
