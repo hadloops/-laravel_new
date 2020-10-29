@@ -53,9 +53,9 @@ class IndexController extends Controller
 
         $info = dispatch((new SendMessage($time))->onQueue('user:login')->delay(now()->addSeconds($time)));
 
-        info(sprintf("[%s][%s] info is %s", __CLASS__, date("Y-m-d H:i:s"), json_encode($info)));
+        info(sprintf("[%s][%s] info is %s", __CLASS__, date("Y-m-d H:i:s"), json_encode((array)$info)));
 
-        dd($info);
+        dd((array) $info);
 
 
     }
